@@ -1,0 +1,41 @@
+{% extends "otb/base.html" %}
+
+{% block content %}
+
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+
+            <th scope="col">Rut</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido p.</th>
+            <th scope="col">Apellido m.</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Deposito</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for otb in cliente %}
+            <tr>
+          
+              <td>{{cliente.rut}}</td>
+              <td>{{alumno.nombre}}</td>
+              <td>{{alumno.fono}}</td>
+              <td>{{alumno.aPaterno}}</td>
+              <td>{{alumno.aMaterno}}</td>
+              <td>{{alumno.edad}}</td>
+              <td>{{alumno.deposito}}</td>
+              <td>{{alumno.email}}</td>
+            
+              </tr>
+            
+          {% endfor %}
+        
+              
+        </tbody>
+      </table>
+      
+      
+      {% endblock content %}
