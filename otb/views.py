@@ -36,27 +36,19 @@ def registro(request):
 
 def cliente(request):
     if request.method == "POST":
-        form = ClienteForm(request.POST)
-        if form.is_valid():
-            form.save()
-            rut = form.cleaned_data['rut']
-            nombre = form.cleaned_data['nombre']
-            aPaterno = form.cleaned_data['aPaterno']
-            aMaterno = form.cleaned_data['aMaterno']
-            fono = form.cleaned_data['fono']
-            edad = form.cleaned_data['edad']
-            deposito = form.cleaned_data['deposito']
-            email = form.cleaned_data['email']
-            # cliente = authenticate(rut=rut, nombre=nombre, aPaterno=aPaterno, aMaterno=aMaterno, fono=fono, edad=edad, deposito=deposito, email=email)
-            cliente.save(rut=rut, nombre=nombre, aPaterno=aPaterno, aMaterno=aMaterno, fono=fono, edad=edad, deposito=deposito, email=email)
-            return render(request, 'otb/index.html')
-        else:
-            context = {'form':ClienteForm, 'msj':'Error, intente de nuevo...'}
-            return render(request, 'otb/cliente.html', context)
-        
-    return render(request, 'otb/cliente.html', {'form':ClienteForm})
-
-
+        form = ClienteForm
+        context = {'form':form, 'msj':'Error, intente de nuevo...'}
+        Cliente.objects.create(rut=request.POST["rut"], 
+                               nombre=request.POST["nombre"], 
+                               aPaterno=request.POST["aPaterno"], 
+                               aMaterno=request.POST["aMaterno"], 
+                               fono=request.POST["fono"], 
+                               edad=request.POST["edad"], 
+                               deposito=request.POST["deposito"], 
+                               email=request.POST["email"])
+        return render(request, 'otb/cliente.html', context)
+    else:
+        return render(request, 'otb/cliente.html', {'form':ClienteForm})
 
 
 
