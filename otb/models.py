@@ -28,8 +28,8 @@ class Cliente(models.Model):
     deposito = models.IntegerField()
     email    = models.EmailField(unique=True, max_length=100, blank=True, null=True) 
 
-    USERNAME_FIELD = 'nombre'+'aPaterno'
-    REQUIRED_FIELDS =[]
+    # USERNAME_FIELD = 'nombre'+'aPaterno'
+    # REQUIRED_FIELDS =[]
 
 #     def __str__(self):
 #         return str(self.nombre)+" "+(self.aPaterno)
