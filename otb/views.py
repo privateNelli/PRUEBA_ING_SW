@@ -10,6 +10,7 @@ from .models import Cliente
 
 def index(request):
     return render(request, 'otb/index.html')
+    
 
 def registro(request):
     if request.method == 'GET':
