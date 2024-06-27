@@ -19,5 +19,5 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('otb/',include('otb.urls'))
+    path('',include('otb.urls'))
 ]

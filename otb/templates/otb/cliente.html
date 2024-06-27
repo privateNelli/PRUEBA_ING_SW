@@ -3,11 +3,11 @@
 {% block content %}
 
 
-<h1>Registro de Cliente</h1>
 
       <div class="container form-signup">
       <form style="text-align: center;" method="POST">
         {% csrf_token %}
+        <h2 class="h2-signup">Registrar Cliente</h2>
         {{form.as_p}}
         <input type="submit" class="btn btn-secondary" value="Registrar">
   
