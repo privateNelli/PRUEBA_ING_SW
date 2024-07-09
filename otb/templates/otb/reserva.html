@@ -16,6 +16,7 @@
             <th scope="col">Edad</th>
             <th scope="col">Deposito</th>
             <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +31,8 @@
               <td>{{cliente1.edad}}</td>
               <td>{{cliente1.deposito}}</td>
               <td>{{cliente1.email}}</td>
+              <td><a href="edit1/{{cliente1.rut}}" class="btn btn-info">Editar</a></td>
+              <td><a href="delete/{{cliente1.rut}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
             
               </tr>
             

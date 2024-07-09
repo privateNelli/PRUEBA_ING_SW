@@ -99,6 +99,40 @@ def reserva(request):
     return render(request, 'otb/reserva.html', context)
 
 
+def edit(request, rut):
+    cliente = Cliente.objects.get(rut=rut)
+    return render(request, "otb/edit.html", {"cliente": cliente})
+
+def edit1(request):
+    rut = request.POST['Rut']
+    nombre = request.POST['Nombre']
+    aPaterno = request.POST['aPaterno']
+    aMaterno = request.POST['aMaterno']
+    fono = request.POST['Fono']
+    edad = request.POST['Edad']
+    deposito = request.POST['Deposito']
+    email = request.POST['Email']
+
+    cliente = Cliente.objects.get(rut=rut)
+    cliente.rut = rut
+    cliente.nombre = nombre
+    cliente.aPaterno = aPaterno
+    cliente.aMaterno = aMaterno
+    cliente.fono = fono
+    cliente.edad = edad
+    cliente.deposito = deposito
+    cliente.email = email
+    cliente.save()
+
+    return redirect('reserva')
+
+
+def delete(request, rut):
+    cliente = Cliente.objects.get(rut=rut)
+    cliente.delete()
+    return redirect('reserva')
+
+
 
 
 # def reserva(request):

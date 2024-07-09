@@ -1,0 +1,48 @@
+{% extends "otb/base.html" %}
+
+{% block content %}
+<div class = "row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edicion de Cliente</h2>
+        <div class="card p-3">
+            <div class="card-body">
+                <form action="/edit/" method="POST">{% csrf_token %}
+                    <div class="form-group mb-3">
+                        <input type="text" id="Rut" name="Rut" value="{{cliente.rut}}" class="form-control" placeholder="Rut" 
+                        minlength="10" maxlength="10" readonly required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input type="text" id="Nombre" name="Nombre" value="{{cliente.nombre}}" class="form-control" placeholder="Nombre" 
+                        maxlength="50" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input type="text" id="numCantidad" name="aPaterno" value="{{cliente.aPaterno}}" class="form-control" placeholder="Apellido Paterno" min="1" max="100" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" id="numCantidad" name="aMaterno" value="{{cliente.aMaterno}}" class="form-control" placeholder="Apellido Materno" min="1" max="100" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="number" id="numCantidad" name="Fono" value="{{cliente.fono}}" class="form-control" placeholder="Telefono" min="111111111" max="999999999" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="number" id="numCantidad" name="Edad" value="{{cliente.edad}}" class="form-control" placeholder="Edad" min="1" max="100" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="number" id="numCantidad" name="Deposito" value="{{cliente.deposito}}" class="form-control" placeholder="Deposito" min="1000" max="150000" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" id="numCantidad" name="Email" value="{{cliente.email}}" class="form-control" placeholder="Email" min="20" max="50" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar Edicion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
